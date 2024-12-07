@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
-import { Moon, Sun, Search, Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Moon, Sun, Search, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -11,9 +11,9 @@ const Header = () => {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
@@ -39,15 +39,24 @@ const Header = () => {
 
           {/* Centered Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <img src="/src/assets/cafeDeCages logo.png" alt="Logo" width={100} height={32} />
+            <img
+              src={
+                isDarkMode
+                  ? "/src/assets/logo-dark.png"
+                  : `/src/assets/logo-light.png`
+              }
+              alt="Logo"
+              width={100}
+              height={32}
+            />
           </div>
 
           {/* Navigation Links (hidden on mobile) */}
           <div
             className={`md:flex items-center space-x-4 ${
               isMenuOpen
-                ? 'block absolute top-16 left-0 right-0 bg-white dark:bg-gray-800 shadow-md p-4'
-                : 'hidden'
+                ? "block absolute top-16 left-0 right-0 bg-white dark:bg-gray-800 shadow-md p-4"
+                : "hidden"
             }`}
           >
             <a

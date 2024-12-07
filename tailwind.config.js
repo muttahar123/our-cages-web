@@ -9,4 +9,5 @@ export default {
   },
   darkMode: 'class', // Add this line for dark mode
   plugins: [],
+  
 };
